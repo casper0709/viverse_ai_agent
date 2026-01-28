@@ -29,7 +29,8 @@ export const chat = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            reply: response
+            reply: response,
+            response: response
         });
     } catch (error) {
 

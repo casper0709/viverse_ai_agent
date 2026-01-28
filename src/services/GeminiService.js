@@ -115,7 +115,7 @@ class GeminiService {
             Your primary goal is to help users discover immersive content.
             1. Use 'searchRooms' as your primary tool to find worlds, spaces, or landmarks.
             2. When 'searchRooms' returns results, you MUST construct the public URL for a room using the 'hub_sid' property.
-               URL Format: https://worlds.viverse.com/[hub_sid]
+               URL Format: https://worlds.viverse.com/[hub_sid]?full3d=
                Always provide these clickable links and present results in a Markdown table.
             
             Secondary Capability (Code & Project): You can also help with technical tasks if specifically asked.
