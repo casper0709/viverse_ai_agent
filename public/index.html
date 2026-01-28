@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIVERSE AI Agent Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-wrapper">
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>VIVERSE<span>AI</span></h1>
+            </div>
+            <nav class="history">
+                <div class="nav-label">Global Views</div>
+                <div id="tab-chat" class="history-item active" data-tab-id="chat">
+                    <span class="icon">💬</span>
+                    <span class="text">Discovery Chat</span>
+                </div>
+
+                <div id="dynamic-tabs" class="dynamic-tabs">
+                    <!-- Dynamic tabs will be added here -->
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="status-badge online">Endpoint: Online</div>
+            </div>
+        </aside>
+
+        <main id="viewport" class="viewport">
+            <!-- Chat View (Default) -->
+            <section id="chat-view" class="view active">
+                <header class="view-header">
+                    <div class="agent-info">
+                        <div class="agent-avatar"></div>
+                        <div class="agent-meta">
+                            <h2>VIVERSE AI Agent</h2>
+                            <span class="status">Active Chat</span>
+                        </div>
+                    </div>
+                </header>
+
+                <div id="chat-messages" class="chat-messages">
+                    <div class="message-bubble system">
+                        <p>Welcome to VIVERSE Discovery. I am your specialized scout for exploring worlds, content, and
+                            spaces within the VIVERSE ecosystem. How can I help you find your next destination today?
+                        </p>
+                    </div>
+                </div>
+
+                <footer class="chat-input-area">
+                    <div class="input-wrapper">
+                        <textarea id="user-input" placeholder="Type your message here..." rows="1"></textarea>
+                        <button id="send-btn" class="send-btn">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="currentColor" d="M2.01 21L23 12L2.01 3L2 10l15 2l-15 2z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </footer>
+            </section>
+
+            <!-- Dynamic Views will be injected here -->
+        </main>
+    </div>
+
+    <!-- Template for Dynamic Tabs (Iframe View) -->
+    <template id="tab-view-template">
+        <section class="view">
+            <header class="view-header">
+                <div class="view-info">
+                    <span class="view-title">New View</span>
+                </div>
+                <div class="view-actions">
+                    <button class="open-external-btn" title="Open in New Tab">
+                        <svg viewBox="0 0 24 24" width="18" height="18">
+                            <path fill="currentColor"
+                                d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z">
+                            </path>
+                        </svg>
+                    </button>
+                    <button class="close-view-btn" title="Close Tab">
+                        <svg viewBox="0 0 24 24" width="18" height="18">
+                            <path fill="currentColor"
+                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+            <div class="iframe-container">
+                <iframe src="about:blank" frameborder="0"></iframe>
+            </div>
+            <!-- Fallback Overlay for CSP-blocked sites -->
+            <div class="csp-overlay hidden">
+                <div class="overlay-content">
+                    <div class="overlay-icon">🔒</div>
+                    <h3>Security Restricted</h3>
+                    <p>This portal is restricted to the VIVERSE domain for security. Please open it in a dedicated
+                        browser tab.</p>
+                    <button class="primary-btn open-external-btn">Open VIVERSE Portal</button>
+                </div>
+            </div>
+        </section>
+    </template>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
